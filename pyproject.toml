@@ -1,0 +1,28 @@
+[project]
+name = "kurs1-python-82"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Андрей Гордиевский",email = "agwzdushaz@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "requests-html (>=0.10.0,<0.11.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.2.0"
+black = "^25.1.0"
+isort = "^6.0.1"
+mypy = "^1.15.0"
+requests-mock = "^1.12.1"
+
