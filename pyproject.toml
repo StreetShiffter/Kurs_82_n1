@@ -25,6 +25,7 @@ black = "^25.1.0"
 isort = "^6.0.1"
 mypy = "^1.15.0"
 requests-mock = "^1.12.1"
+coverage = "^7.8.0"
 
 [tool.black]
 # Максимальная длина строки
@@ -41,4 +42,6 @@ exclude = 'venv'
 [tool.isort]
 # максимальная длина строки
 line_length = 119
-#
+
+[tool.poetry.scripts]
+test-cov = "pytest --cov=my_package tests/ --cov-report=html"
