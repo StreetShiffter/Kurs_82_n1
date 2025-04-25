@@ -42,5 +42,5 @@ def main_info(datetime_string: str) -> Dict[str, Any]:
     "stock_prices": stock_prices,
   }
 
-  json_data = json.dumps(data, ensure_ascii=False, indent=4)
-  return json_data
+  json_data_views = json.dumps(data, ensure_ascii=False, indent=4)
+  return json_data_views

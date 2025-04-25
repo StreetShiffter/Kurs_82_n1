@@ -1,12 +1,17 @@
 from datetime import datetime
 from pandas import DataFrame
+from pprint import pprint
+from typing import Dict, Any, List
 import pandas as pd
 from dotenv import load_dotenv
+import re
 import requests
 import json
 import os
 import yfinance as yf
 import time
+
+from config import PATH_FILE
 
 URL = "https://api.apilayer.com/exchangerates_data/convert"
 
@@ -206,3 +211,49 @@ def get_stock(path_to_json: str, max_retries: int = 3) -> list[dict]:
                 time.sleep(1)
 
     return stock_rates
+
+
+def get_phone_number(filename: str)-> Dict[str, Any]:
+    """Функция читающая excel файл, и ищет информацию по транзакции, в которой указан номер телефона"""
+    try:
+        df = pd.read_excel(filename)
+    except Exception as error:
+        raise Exception(f'Ошибка при чтении файла: {str(error)}')
+
+    pattern = r'\+[\d()\s-]+'
+    result = []
+
+    df_open = df[
+        ['Дата операции',
+         'Дата платежа',
+         'Номер карты',
+         'Статус',
+         'Сумма операции',
+         'Валюта операции',
+         'Сумма платежа',
+         'Валюта платежа',
+         'Категория',
+         'Описание'
+         ]
+    ]
+
+    df_open = df_open.fillna('Не определено')
+    for _, value in df_open.iterrows():
+        search_info = re.search(pattern, value['Описание'])
+        if search_info:
+            answer_info = {
+                'Дата операции': f'{value['Дата операции']}',
+                'Дата платежа': f'{value['Дата платежа']}',
+                'Номер карты': f'{value['Номер карты']}',
+                'Статус': f'{value['Статус']}',
+                'Сумма операции': f'{value['Сумма операции']}',
+                'Валюта операции': f'{value['Валюта операции']}',
+                'Сумма платежа': f'{value['Сумма платежа']}',
+                'Валюта платежа': f'{value['Валюта платежа']}',
+                'Категория': f'{value['Категория']}',
+                'Описание': f'{value['Описание']}'
+            }
+            result.append(answer_info)
+
+
+    return result
