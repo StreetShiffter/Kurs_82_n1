@@ -1,7 +1,7 @@
 from datetime import datetime
 from pandas import DataFrame
-from pprint import pprint
 from typing import Dict, Any, List
+import logging
 import pandas as pd
 from dotenv import load_dotenv
 import re
@@ -11,7 +11,6 @@ import os
 import yfinance as yf
 import time
 
-from config import PATH_FILE
 
 URL = "https://api.apilayer.com/exchangerates_data/convert"
 
@@ -22,6 +21,16 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")  # Убедитесь, что в .env есть строка API_KEY=ваш_ключ
 headers = {"apikey": API_KEY}
 
+# Получаем путь к текущему скрипту
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path_1 = os.path.join(script_dir, "../logs/example.log")
+
+# loger_func = logging.getLogger(__name__) # логер к текущему модулю
+# file_handler = logging.FileHandler(file_path_1, encoding = 'utf-8')
+# file_formatter = logging.Formatter('%(asctime)s %(filename)s %(funcName)s %(levelname)s: %(message)s')
+# file_handler.setFormatter(file_formatter)
+# loger_func.addHandler(file_handler)
+# loger_func.setLevel(logging.DEBUG)
 
 
 def greet_func()-> str:
@@ -213,16 +222,28 @@ def get_stock(path_to_json: str, max_retries: int = 3) -> list[dict]:
     return stock_rates
 
 
-def get_phone_number(filename: str)-> Dict[str, Any]:
+def get_phone_number(filename: str)-> list[dict[str, str]]:
     """Функция читающая excel файл, и ищет информацию по транзакции, в которой указан номер телефона"""
     try:
         df = pd.read_excel(filename)
     except Exception as error:
         raise Exception(f'Ошибка при чтении файла: {str(error)}')
 
+# def get_phone_number(filename: str) -> Dict[str, Any]:
+#     """Функция читающая excel файл, и ищет информацию по транзакции, в которой указан номер телефона"""
+#     try:
+#         # Для .xlsx
+#         if filename.endswith('.xlsx'):
+#             df = pd.read_excel(filename, engine='openpyxl')
+#         # Для .xls
+#         elif filename.endswith('.xls'):
+#             df = pd.read_excel(filename, engine='xlrd')
+#         else:
+#             raise ValueError("Неверный формат файла. Поддерживаются только .xls и .xlsx")
+#     except Exception as error:
+#         raise Exception(f'Ошибка при чтении файла: {str(error)}')
     pattern = r'\+[\d()\s-]+'
     result = []
-
     df_open = df[
         ['Дата операции',
          'Дата платежа',
@@ -257,3 +278,12 @@ def get_phone_number(filename: str)-> Dict[str, Any]:
 
 
     return result
+
+def get_dataframe(filename: DataFrame)-> DataFrame:
+    """Функция читающая excel файл, и ищет информацию по транзакции, в которой указан номер телефона"""
+    try:
+        df = pd.read_excel(filename)
+    except Exception as error:
+        raise Exception(f'Ошибка при чтении файла: {str(error)}')
+
+    return df

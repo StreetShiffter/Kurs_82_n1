@@ -1,5 +1,4 @@
 import json
-from config import PATH_FILE
 from pandas import DataFrame
 from typing import List, Dict, Any
 from src.utils import get_phone_number
