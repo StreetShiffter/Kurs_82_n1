@@ -29,12 +29,19 @@ isort = "^6.0.1"
 mypy = "^1.15.0"
 requests-mock = "^1.12.1"
 coverage = "^7.8.0"
+pytest = "^8.3.5"
+pandas-stubs = "^2.2.3.250308"
+types-requests = "^2.32.0.20250328"
 
 [tool.black]
 # Максимальная длина строки
 line-length = 119
 # Файлы, которые не нужно форматировать
 exclude = '\\.git'
+
+[[tool.mypy.overrides]]
+module = ["untyped_package.*"]
+follow_untyped_imports = true
 
 [tool.mypy]
 disallow_untyped_defs = true
