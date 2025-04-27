@@ -1,0 +1,9 @@
+2025-04-27 15:46:10,803 - utils.py - get_date_interval - INFO: Период времени рассчитан
+2025-04-27 15:46:12,027 - utils.py - greet_func - INFO: Вызов приветствия....OK
+2025-04-27 15:46:12,032 - utils.py - get_cards_with_spend - INFO: Получены данные по расходам
+2025-04-27 15:46:12,034 - utils.py - get_top_transactions - INFO: Получены топ транзакций по категории
+2025-04-27 15:46:12,035 - utils.py - get_currency - INFO: JSON файл открыт
+2025-04-27 15:46:12,894 - utils.py - get_currency - INFO: Курс валют сформирован
+2025-04-27 15:46:14,929 - utils.py - get_stock - INFO: Стоимость акций получены
+2025-04-27 15:46:16,007 - utils.py - get_phone_number - INFO: DataFrame получен
+2025-04-27 15:46:16,415 - utils.py - get_phone_number - INFO: Отчет сформирован

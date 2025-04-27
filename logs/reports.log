@@ -1,0 +1,2 @@
+2025-04-27 15:46:10,803 - reports.py - spending_by_category - INFO: Сформирован JSON-ответ "Отчеты"
+2025-04-27 15:46:17,595 - reports.py - get_dataframe - INFO: DataFrame получен
