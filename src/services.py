@@ -2,9 +2,7 @@ import json
 import logging
 import os
 from typing import Dict, List
-
 from pandas import DataFrame
-
 from src.utils import get_phone_number
 
 # Получаем путь к текущему скрипту
