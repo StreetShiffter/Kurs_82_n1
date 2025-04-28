@@ -7,6 +7,7 @@ from typing import Any, Callable
 
 import pandas as pd
 
+
 # Получаем путь к текущему скрипту
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,7 +15,7 @@ log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)  # Создаем папку logs, если её нет
 
 # Настройка обработчиков
-file_handler = logging.FileHandler("logs/reports.log", "w", encoding="utf-8")
+file_handler = logging.FileHandler("logs/reports.log", "w", "utf-8")
 file_handler.setLevel(logging.DEBUG)  # Убедимся, что обработчик принимает все уровни
 
 console_handler = logging.StreamHandler()

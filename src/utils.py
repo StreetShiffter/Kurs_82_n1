@@ -127,7 +127,7 @@ def get_cards_with_spend(sorded_df: DataFrame) -> list[dict]:
     return card_expenses_transactions  # type: ignore
 
 
-def get_top_transactions(sorted_df: DataFrame, get_top):
+def get_top_transactions(sorted_df: DataFrame, get_top: int) -> list[dict[str, str]]:
     """
     5. Функция принимает DataFrame и возвращает get_top топ-транзакций по сумме платежа
     """

@@ -4,8 +4,15 @@ import os
 from typing import Any, Dict
 
 from config import FILE_JSON, PATH_FILE
-from src.utils import (get_cards_with_spend, get_currency, get_date_interval, get_path_to_file_and_period, get_stock,
-                       get_top_transactions, greet_func)
+from src.utils import (
+    get_cards_with_spend,
+    get_currency,
+    get_date_interval,
+    get_path_to_file_and_period,
+    get_stock,
+    get_top_transactions,
+    greet_func,
+)
 
 # Получаем путь к текущему скрипту
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +42,7 @@ logger.setLevel(logging.DEBUG)
 
 def main_info(datetime_string: str) -> Dict[str, Any]:
     """
-    функций и главную функцию, принимающую на вход строку с датой и временем в формате "2025-04-22 18:16:00"
+    Функция, принимающую на вход строку с датой и временем в формате "2025-04-22 18:16:00"
     и возвращающую JSON
     """
 
@@ -43,7 +50,7 @@ def main_info(datetime_string: str) -> Dict[str, Any]:
     time_period = get_date_interval(datetime_string)
     logger.info("Получен период времени")
     sorded_df = get_path_to_file_and_period(PATH_FILE, time_period)
-    logger.info("Получен отсортированый DataFrame")
+    logger.info("Получен отсортированный DataFrame")
 
     # ШАГ 1: Приветствие по времени суток
     greeting = greet_func()
