@@ -2,7 +2,7 @@ import json
 import logging
 import os
 from typing import Dict, List
-from pandas import DataFrame
+
 from src.utils import get_phone_number
 
 # Получаем путь к текущему скрипту
@@ -31,9 +31,9 @@ logger.addHandler(console_handler)
 logger.setLevel(logging.DEBUG)
 
 
-def info_transaction_filter_phone(PATH_FILE: DataFrame) -> List[Dict]:
+def info_transaction_filter_phone(path_file: str) -> List[Dict]:
     """Функция принимающаяя транзакции, отфильтровывает по номеру и формирует JSON"""
-    data = get_phone_number(PATH_FILE)  # type: ignore
+    data = get_phone_number(path_file)
 
     json_data_services = json.dumps(data, ensure_ascii=False, indent=4)
     logger.info('Сформирован JSON-ответ "Сервисы"')

@@ -4,15 +4,8 @@ import os
 from typing import Any, Dict
 
 from config import FILE_JSON, PATH_FILE
-from src.utils import (
-    get_cards_with_spend,
-    get_currency,
-    get_date_interval,
-    get_path_to_file_and_period,
-    get_stock,
-    get_top_transactions,
-    greet_func,
-)
+from src.utils import (get_cards_with_spend, get_currency, get_date_interval, get_path_to_file_and_period, get_stock,
+                       get_top_transactions, greet_func)
 
 # Получаем путь к текущему скрипту
 script_dir = os.path.dirname(os.path.abspath(__file__))

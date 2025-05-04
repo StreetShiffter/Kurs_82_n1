@@ -7,7 +7,6 @@ from typing import Any, Callable
 
 import pandas as pd
 
-
 # Получаем путь к текущему скрипту
 script_dir = os.path.dirname(os.path.abspath(__file__))
 

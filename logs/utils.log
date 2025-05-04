@@ -1,9 +1,9 @@
-2025-04-28 23:06:32,065 - utils.py - get_date_interval - INFO: Период времени рассчитан
-2025-04-28 23:06:33,289 - utils.py - greet_func - INFO: Вызов приветствия....OK
-2025-04-28 23:06:33,302 - utils.py - get_cards_with_spend - INFO: Получены данные по расходам
-2025-04-28 23:06:33,306 - utils.py - get_top_transactions - INFO: Получены топ транзакций по категории
-2025-04-28 23:06:33,307 - utils.py - get_currency - INFO: JSON файл открыт
-2025-04-28 23:06:34,138 - utils.py - get_currency - INFO: Курс валют сформирован
-2025-04-28 23:06:38,333 - utils.py - get_stock - INFO: Стоимость акций получены
-2025-04-28 23:06:39,229 - utils.py - get_phone_number - INFO: DataFrame получен
-2025-04-28 23:06:39,520 - utils.py - get_phone_number - INFO: Отчет сформирован
+2025-05-04 15:35:11,377 - utils.py - get_date_interval - INFO: Период времени рассчитан
+2025-05-04 15:35:12,173 - utils.py - greet_func - INFO: Вызов приветствия....OK
+2025-05-04 15:35:12,177 - utils.py - get_cards_with_spend - INFO: Получены данные по расходам
+2025-05-04 15:35:12,179 - utils.py - get_top_transactions - INFO: Получены топ транзакций по категории
+2025-05-04 15:35:12,179 - utils.py - get_currency - INFO: JSON файл открыт
+2025-05-04 15:35:13,205 - utils.py - get_currency - INFO: Курс валют сформирован
+2025-05-04 15:35:16,627 - utils.py - get_stock - INFO: Стоимость акций получены
+2025-05-04 15:35:17,357 - utils.py - get_phone_number - INFO: DataFrame получен
+2025-05-04 15:35:17,524 - utils.py - get_phone_number - INFO: Отчет сформирован
