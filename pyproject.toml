@@ -1,23 +1,24 @@
-[project]
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
 name = "kurs1-python-82"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Андрей Гордиевский",email = "agwzdushaz@gmail.com"}
-]
+authors = ["Андрей Гордиевский <agwzdushaz@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "requests (>=2.32.3,<3.0.0)",
-    "requests-html (>=0.10.0,<0.11.0)",
-    "pandas (>=2.2.3,<3.0.0)",
-    "openpyxl (>=3.1.5,<4.0.0)"
-]
+package-mode = false  # отключаем установку как пакет
 
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies]
+python = ">=3.13"
+requests = "^2.32.3"
+requests-html = "^0.10.0"
+openpyxl = "^3.1.5"
+xlrd = "1.2.0"
+dotenv = "^0.9.9"
+yfinance = "^0.2.56"
+pandas = "^2.2.3"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.2.0"
@@ -26,12 +27,14 @@ isort = "^6.0.1"
 mypy = "^1.15.0"
 requests-mock = "^1.12.1"
 coverage = "^7.8.0"
+pytest = "^8.3.5"
+pandas-stubs = "^2.2.3.250308"
+types-requests = "^2.32.0.20250328"
+pytest-cov = "^6.1.1"
 
 [tool.black]
-# Максимальная длина строки
 line-length = 119
-# Файлы, которые не нужно форматировать
-exclude = '\\.git'
+exclude = '\.git'
 
 [tool.mypy]
 disallow_untyped_defs = true
@@ -39,9 +42,9 @@ no_implicit_optional = true
 warn_return_any = true
 exclude = 'venv'
 
-[tool.isort]
-# максимальная длина строки
-line_length = 119
+[[tool.mypy.overrides]]
+module = ["untyped_package.*"]
+follow_untyped_imports = true
 
-[tool.poetry.scripts]
-test-cov = "pytest --cov=my_package tests/ --cov-report=html"
+[tool.isort]
+line_length = 119

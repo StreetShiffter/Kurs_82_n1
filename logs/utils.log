@@ -1,0 +1,31 @@
+2025-05-04 16:15:45,338 - utils.py - get_date_interval - INFO: Период времени рассчитан
+2025-05-04 16:15:45,987 - utils.py - greet_func - INFO: Вызов приветствия....OK
+2025-05-04 16:15:45,990 - utils.py - get_cards_with_spend - INFO: Получены данные по расходам
+2025-05-04 16:15:45,991 - utils.py - get_top_transactions - INFO: Получены топ транзакций по категории
+2025-05-04 16:15:45,991 - utils.py - get_currency - INFO: JSON файл открыт
+2025-05-04 16:15:46,969 - utils.py - get_currency - INFO: Курс валют сформирован
+2025-05-04 16:15:49,389 - utils.py - get_stock - INFO: Стоимость акций получены
+2025-05-04 16:15:49,392 - utils.py - get_phone_number - ERROR: [Errno 2] No such file or directory: 'C:\\Users\\user\\PycharmProjects\\Kurs_82_n1\\./data/operations_1.xlx'
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\Kurs_82_n1\src\utils.py", line 215, in get_phone_number
+    df = pd.read_excel(filename)
+  File "C:\Users\user\PycharmProjects\Python_HW\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "C:\Users\user\PycharmProjects\Python_HW\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+        content_or_path=path_or_buffer, storage_options=storage_options
+    )
+  File "C:\Users\user\PycharmProjects\Python_HW\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+         ~~~~~~~~~~^
+        content_or_path, "rb", storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handle:
+    ^
+  File "C:\Users\user\PycharmProjects\Python_HW\.venv\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\user\\PycharmProjects\\Kurs_82_n1\\./data/operations_1.xlx'
