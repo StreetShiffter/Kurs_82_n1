@@ -103,12 +103,12 @@ def get_path_to_file_and_period(path_to_file: str, time_period: list) -> DataFra
     return sorted_df
 
 
-def get_cards_with_spend(sorded_df: DataFrame) -> list[dict]:
+def get_cards_with_spend(sortded_df: DataFrame) -> list[dict]:
     """
     4. Функция принимает DataFrame и возвращает список карт с расходами
     """
     card_expenses_transactions = []
-    card_sorted = sorded_df[
+    card_sorted = sortded_df[
         [
             "Номер карты",
             "Сумма операции",

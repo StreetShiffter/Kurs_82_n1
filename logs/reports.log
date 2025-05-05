@@ -1,2 +1,0 @@
-2025-05-04 15:35:18,128 - reports.py - get_dataframe - INFO: DataFrame получен
-2025-05-04 15:35:18,149 - reports.py - wrapper - INFO: Сформирован JSON-ответ "Отчеты"
